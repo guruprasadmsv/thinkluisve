@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ListView
 import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
 
@@ -69,13 +70,39 @@ class FirstFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val tvSender = view.findViewById<TextView>(R.id.senderTv)
-        tvSender.setOnClickListener {
-            parentFragmentManager.beginTransaction()
-                .add(R.id.fragment_container, SecondFragment())
-                .addToBackStack(null)
-                .commit()
-        }
+        val demoArrayList = arrayListOf<DemoUser>()
+        demoArrayList.add(DemoUser("Sachin", "11"))
+        demoArrayList.add(DemoUser("Sachin1", "112"))
+        demoArrayList.add(DemoUser("Sachin2", "113"))
+        demoArrayList.add(DemoUser("Sachin3", "114"))
+        demoArrayList.add(DemoUser("Sachin4", "115"))
+        demoArrayList.add(DemoUser("Sachin5", "116"))
+        demoArrayList.add(DemoUser("Sachin", "11"))
+        demoArrayList.add(DemoUser("Sachin1", "112"))
+        demoArrayList.add(DemoUser("Sachin2", "113"))
+        demoArrayList.add(DemoUser("Sachin3", "114"))
+        demoArrayList.add(DemoUser("Sachin4", "115"))
+        demoArrayList.add(DemoUser("Sachin5", "116"))
+        demoArrayList.add(DemoUser("Sachin", "11"))
+        demoArrayList.add(DemoUser("Sachin1", "112"))
+        demoArrayList.add(DemoUser("Sachin2", "113"))
+        demoArrayList.add(DemoUser("Sachin3", "114"))
+        demoArrayList.add(DemoUser("Sachin4", "115"))
+        demoArrayList.add(DemoUser("Sachin5", "116"))
+        demoArrayList.add(DemoUser("Sachin", "11"))
+        demoArrayList.add(DemoUser("Sachin1", "112"))
+        demoArrayList.add(DemoUser("Sachin2", "113"))
+        demoArrayList.add(DemoUser("Sachin3", "114"))
+        demoArrayList.add(DemoUser("Sachin4", "115"))
+        demoArrayList.add(DemoUser("Sachin5", "116"))
+        demoArrayList.add(DemoUser("Sachin", "11"))
+        demoArrayList.add(DemoUser("Sachin1", "112"))
+        demoArrayList.add(DemoUser("Sachin2", "113"))
+        demoArrayList.add(DemoUser("Sachin3", "114"))
+        demoArrayList.add(DemoUser("Sachin4", "115"))
+        demoArrayList.add(DemoUser("Sachin5", "116"))
+        val listView = view.findViewById<ListView>(R.id.demoListView)
+        listView.adapter = DemoListAdapter(demoArrayList)
     }
 
     override fun onStart() {
